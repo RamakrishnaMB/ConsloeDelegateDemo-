@@ -51,13 +51,25 @@ namespace ConsloeDelegateDemo
 
 
             #region Action Delegates
-            Action<string> actionPrintDelegate = PrintMessage;
+            //Action<string> actionPrintDelegate = PrintMessage;
 
-            actionPrintDelegate("Message print from action delegate");
+            //actionPrintDelegate("Message print from action delegate");
 
             #endregion
 
+            #region Func Delegates 
+            Func<int, int, int> funcAddDelegate = AddTwoNumbers;
+
+            int result = funcAddDelegate(10, 20);
+            Console.WriteLine($"Sum of Func delegate result is {result}");
+            #endregion
+
             Console.ReadLine();
+        }
+
+        private static int AddTwoNumbers(int x, int y)
+        {
+            return x + y;
         }
 
         class ClassA

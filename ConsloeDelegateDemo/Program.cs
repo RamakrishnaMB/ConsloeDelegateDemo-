@@ -58,13 +58,26 @@ namespace ConsloeDelegateDemo
             #endregion
 
             #region Func Delegates 
-            Func<int, int, int> funcAddDelegate = AddTwoNumbers;
+            //Func<int, int, int> funcAddDelegate = AddTwoNumbers;
 
-            int result = funcAddDelegate(10, 20);
-            Console.WriteLine($"Sum of Func delegate result is {result}");
+            //int result = funcAddDelegate(10, 20);
+            //Console.WriteLine($"Sum of Func delegate result is {result}");
+            #endregion
+
+            #region Predicate Delgates
+            Predicate<string> predicateCheckIsupeer = IsUpperCase;
+
+            bool result = predicateCheckIsupeer("lowercase string");
+            Console.WriteLine($"returned type is boolen and value is {result}");
+
             #endregion
 
             Console.ReadLine();
+        }
+
+        private static bool IsUpperCase(string value)
+        {
+            return value.Equals(value.ToUpper());
         }
 
         private static int AddTwoNumbers(int x, int y)

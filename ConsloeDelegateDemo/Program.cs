@@ -33,22 +33,29 @@ namespace ConsloeDelegateDemo
             #endregion
 
             #region Multicast Delegates
-            delMulticastdemo multicastdemo1 = ClassA.MethodA;
-            delMulticastdemo multicastdemo2 = ClassB.MethodB;
+            //delMulticastdemo multicastdemo1 = ClassA.MethodA;
+            //delMulticastdemo multicastdemo2 = ClassB.MethodB;
 
-            delMulticastdemo multicastdemoResult = multicastdemo1 + multicastdemo2;
+            //delMulticastdemo multicastdemoResult = multicastdemo1 + multicastdemo2;
 
-            //  multicastdemoResult("msg from multicast delegate");
+            ////  multicastdemoResult("msg from multicast delegate");
 
-            delMulticastdemo delMulticastdemoLamda = (string Msg) => {
-                Console.WriteLine(Msg);
-            };
-            multicastdemoResult += delMulticastdemoLamda;
+            //delMulticastdemo delMulticastdemoLamda = (string Msg) => {
+            //    Console.WriteLine(Msg);
+            //};
+            //multicastdemoResult += delMulticastdemoLamda;
 
-            multicastdemoResult -= multicastdemo2;
-            multicastdemoResult("removed method B");
+            //multicastdemoResult -= multicastdemo2;
+            //multicastdemoResult("removed method B");
             #endregion
 
+
+            #region Action Delegates
+            Action<string> actionPrintDelegate = PrintMessage;
+
+            actionPrintDelegate("Message print from action delegate");
+
+            #endregion
 
             Console.ReadLine();
         }
